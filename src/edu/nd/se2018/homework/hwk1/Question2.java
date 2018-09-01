@@ -20,6 +20,7 @@ public class Question2 {
             }
         }
         
+        // Update hashmap with word (key) and count (val)
         for (String ss: inputList) {
         	if (!h.containsKey(ss)) {
         		h.put(ss, 1);
@@ -27,9 +28,9 @@ public class Question2 {
         	else {
         		h.put(ss, h.get(ss) + 1);
         	}
-//        	System.out.println(ss);
         }
         
+        // Find the word(s) with max value
         Integer maxValue = 0;
         List<String> maxKeys = new ArrayList<String>();
         for (HashMap.Entry<String, Integer> entry : h.entrySet()) {
@@ -42,7 +43,9 @@ public class Question2 {
             maxKeys.add(entry.getKey());
           }
         }
- 
+        
+        
+        // Duplicates
         if (maxKeys.size()!= 1) {
         	return null;
         }
